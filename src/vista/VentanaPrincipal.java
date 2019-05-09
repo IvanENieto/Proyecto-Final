@@ -29,21 +29,7 @@ public class VentanaPrincipal  {
 	@FXML
 	private Button Borrar;
 	
-	ObservableList<String> DepartamentoList = FXCollections.observableArrayList("");
-		
-		@FXML
-		private TableView<Empresa> Empresas;		
-		@FXML
-		private TableView<Alumnos> Alumnos;
-		@FXML
-		private TableView<Ciclos> Ciclos;
-		@FXML
-		private TableView<Tutores> Tutores;
-		@FXML
-		private TableView<Tutemp> Tutemp;
 	
-		@FXML
-		private TableColumn<Empleado,String> ColNombre;
 	
 	
 	
