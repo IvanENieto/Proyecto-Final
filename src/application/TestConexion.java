@@ -22,15 +22,6 @@ public class TestConexion {
 	private String pwd = "";
 	private String scheme = "";
 	private static Connection conexion;
-	
-	
-	
-	
-	
-	
-				
-		
-	
 
 	public TestConexion()  {
 		
