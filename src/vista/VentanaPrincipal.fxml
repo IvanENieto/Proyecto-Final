@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ColorPicker?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -17,29 +16,32 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff8800" height="210.0" layoutX="375.0" layoutY="433.0" stroke="BLACK" strokeType="INSIDE" width="181.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff8800" height="210.0" layoutX="558.0" layoutY="434.0" stroke="BLACK" strokeType="INSIDE" width="181.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff8800" height="210.0" layoutX="741.0" layoutY="433.0" stroke="BLACK" strokeType="INSIDE" width="181.0" />
-      <TableView layoutX="14.0" layoutY="438.0" prefHeight="200.0" prefWidth="172.0">
+      <TableView fx:id="TablaEmp" layoutX="14.0" layoutY="438.0" prefHeight="200.0" prefWidth="172.0">
         <columns>
-          <TableColumn prefWidth="170.0" text="C1" />
+          <TableColumn fx:id="ColNombreEmp" prefWidth="170.0" text="C1" />
         </columns>
       </TableView>
-      <TableView layoutX="198.0" layoutY="438.0" prefHeight="200.0" prefWidth="172.0">
+      <TableView fx:id="TablaAll" layoutX="198.0" layoutY="438.0" prefHeight="200.0" prefWidth="172.0">
          <columns>
-            <TableColumn prefWidth="170.0" text="C1" />
+            <TableColumn fx:id="ColNombreAll" prefWidth="76.0" text="C1" />
+            <TableColumn fx:id="ColNombreAllNombre" prefWidth="95.0" text="Column X" />
          </columns>
       </TableView>
-      <TableView layoutX="380.0" layoutY="438.0" prefHeight="200.0" prefWidth="172.0">
+      <TableView fx:id="TablaCi" layoutX="380.0" layoutY="438.0" prefHeight="200.0" prefWidth="172.0">
          <columns>
-            <TableColumn prefWidth="170.0" text="C1" />
+            <TableColumn fx:id="ColNombreCi" prefWidth="170.0" text="C1" />
          </columns>
       </TableView>
-      <TableView layoutX="562.0" layoutY="438.0" prefHeight="200.0" prefWidth="172.0">
+      <TableView fx:id="TablaTut" layoutX="562.0" layoutY="438.0" prefHeight="200.0" prefWidth="172.0">
          <columns>
-            <TableColumn prefWidth="170.0" text="C1" />
+            <TableColumn fx:id="ColNombreTut" prefWidth="79.0" text="C1" />
+            <TableColumn fx:id="ColNombreTutNombre" prefWidth="92.0" text="Column X" />
          </columns>
       </TableView>
-      <TableView layoutX="745.0" layoutY="438.0" prefHeight="200.0" prefWidth="172.0">
+      <TableView fx:id="TablaTuEmp" layoutX="745.0" layoutY="438.0" prefHeight="200.0" prefWidth="172.0">
          <columns>
-            <TableColumn prefWidth="170.0" text="C1" />
+            <TableColumn fx:id="ColNombrTuemp" prefWidth="95.0" text="C1" />
+            <TableColumn fx:id="ColNombrTuempNombre" prefWidth="75.0" text="Column X" />
          </columns>
       </TableView>
       <Text layoutX="67.0" layoutY="430.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Empresas">
@@ -72,7 +74,6 @@
             <Font size="25.0" fx:id="x112" />
          </font>
       </Text>
-      <ColorPicker layoutX="781.0" layoutY="14.0" />
       <Button layoutX="32.0" layoutY="158.0" mnemonicParsing="false" prefHeight="129.0" prefWidth="136.0" text="Nuevo" />
       <Button layoutX="216.0" layoutY="158.0" mnemonicParsing="false" prefHeight="129.0" prefWidth="136.0" text="Editar" />
       <Button layoutX="574.0" layoutY="158.0" mnemonicParsing="false" prefHeight="129.0" prefWidth="136.0" text="Consultar" />

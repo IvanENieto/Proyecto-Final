@@ -1,15 +1,13 @@
 package vista;
 
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import Const.Alumnos;
-import Const.Empresa;
 import application.TestConexion;
 
 public class VentanaPrincipal  {
@@ -31,7 +29,7 @@ public class VentanaPrincipal  {
 	@FXML
 	private Button Borrar;
 	
-	private final ObservableList<Empresa> dataEmp = FXCollections.observableArrayList(
+	private ObservableList<Empresa> dataEmp = FXCollections.observableArrayList(
 			new Empresa(""));
 		
 		@FXML
@@ -39,38 +37,44 @@ public class VentanaPrincipal  {
 		@FXML
 		private TableColumn<Empresa,String> ColNombreEmp;
 		
-	private final ObservableList<Alumnos> dataAl = FXCollections.observableArrayList(
+	private  ObservableList<Alumnos> dataAl = FXCollections.observableArrayList(
 			new Alumnos("", ""));
 		
 		@FXML
 		private TableView<Alumnos> TablaAll;	
 		@FXML
 		private TableColumn<Alumnos,String> ColNombreAll;
+		@FXML
+		private TableColumn<Alumnos,String> ColNombreAllNombre;
 		
-	private final ObservableList<Ciclos> dataCi = FXCollections.observableArrayList(
-			new Ciclos("", ""));
+	private  ObservableList<Ciclos> dataCi = FXCollections.observableArrayList(
+			new Ciclos(""));
 		
 		@FXML
 		private TableView<Ciclos> TablaCi;	
 		@FXML
 		private TableColumn<Ciclos,String> ColNombreCi;
 		
-	private final ObservableList<Tutores> dataTut = FXCollections.observableArrayList(
+	private ObservableList<Tutores> dataTut = FXCollections.observableArrayList(
 			new Tutores("", ""));
 		
 		@FXML
 		private TableView<Tutores> TablaTut;	
 		@FXML
 		private TableColumn<Tutores,String> ColNombreTut;
+		@FXML
+		private TableColumn<Tutores,String> ColNombreTutNombre;
 		
-	private final ObservableList<TutEmp> dataTutEmp = FXCollections.observableArrayList(
-			new TutEmp("", ""));
+	private  ObservableList<Tutor_Empresa> dataTutEmp = FXCollections.observableArrayList(
+			new Tutor_Empresa("",""));
 		
 		@FXML
-		private TableView<TutEmp> TablaTuEmp;
+		private TableView<Tutor_Empresa> TablaTuEmp;
 	
 		@FXML
-		private TableColumn<Tutemp,String> ColNombrTuemp;
+		private TableColumn<Tutor_Empresa,String> ColNombrTuemp;
+		@FXML
+		private TableColumn<Tutor_Empresa,String> ColNombrTuempNombre;
 		
 		
 		
@@ -82,6 +86,31 @@ public class VentanaPrincipal  {
 	public void initialize(){
 		
 		conexionbbdd = new TestConexion();
+		
+		dataEmp = conexionbbdd.ConsultaNombEmp();
+		TablaEmp.setItems(dataEmp);
+		ColNombreEmp.setCellValueFactory(new PropertyValueFactory<Empresa,String>("NOMBRE"));
+		
+		
+		dataAl = conexionbbdd.ConsultaAl();
+		TablaAll.setItems(dataAl);
+		ColNombreAll.setCellValueFactory(new PropertyValueFactory<Alumnos,String>("APELLIDOS"));
+		ColNombreAllNombre.setCellValueFactory(new PropertyValueFactory<Alumnos,String>("NOMBRE"));
+		
+		dataCi = conexionbbdd.ConsultaCi();
+		TablaCi.setItems(dataCi);
+		ColNombreCi.setCellValueFactory(new PropertyValueFactory<Ciclos,String>("NOMBRE"));
+		
+		dataTutEmp = conexionbbdd.ConsultaTutEmp();
+		TablaTuEmp.setItems(dataTutEmp);
+		ColNombrTuemp.setCellValueFactory(new PropertyValueFactory<Tutor_Empresa,String>("APELLIDOS"));
+		ColNombrTuempNombre.setCellValueFactory(new PropertyValueFactory<Tutor_Empresa,String>("NOMBRE"));
+		
+		dataTut = conexionbbdd.ConsultaTutores();
+		TablaTut.setItems(dataTut);
+		ColNombreTut.setCellValueFactory(new PropertyValueFactory<Tutores,String>("APELLIDOS"));
+		ColNombreTutNombre.setCellValueFactory(new PropertyValueFactory<Tutores,String>("NOMBRE"));
+		
 		
 		
 	}

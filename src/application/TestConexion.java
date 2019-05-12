@@ -9,6 +9,11 @@ import java.util.Properties;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import vista.Alumnos;
+import vista.Ciclos;
+import vista.Empresa;
+import vista.Tutor_Empresa;
+import vista.Tutores;
 
 public class TestConexion {
 	
@@ -23,9 +28,7 @@ public class TestConexion {
 	private String scheme = "";
 	private static Connection conexion;
 
-	public TestConexion()  {
-		
-		
+	public TestConexion()  {		
 		
 				Properties propiedades = new Properties();
 				InputStream entrada = null;
@@ -74,6 +77,138 @@ public class TestConexion {
 		
 	}
 	
+		public ObservableList<Empresa> ConsultaNombEmp() {
+				
+				final ObservableList<Empresa> dataEmp = FXCollections.observableArrayList();
+				
+				
+				
+				
+				try {
+					Statement stmt = conexion.createStatement();
+					ResultSet rset = stmt.executeQuery("SELECT * FROM PRUEBA.EMPRESAS" );
+					while(rset.next()) {
+						dataEmp.add(new Empresa(rset.getString(2)));
+						
+						
+					}
+					rset.close();
+					stmt.close();
+					
+				}catch (SQLException s){
+					s.printStackTrace();
+				}
+			
+				return dataEmp;
+				
+				
+			}
+		public ObservableList<Alumnos> ConsultaAl() {
+			
+			
+			final ObservableList<Alumnos> dataAl = FXCollections.observableArrayList();
+			
+			
+			
+			
+			try {
+				Statement stmt = conexion.createStatement();
+				ResultSet rset = stmt.executeQuery("SELECT * FROM PRUEBA.ALUMNOS" );
+				while(rset.next()) {
+					dataAl.add(new Alumnos(rset.getString(3),rset.getString(2)));
+					
+					
+				}
+				rset.close();
+				stmt.close();
+				
+			}catch (SQLException s){
+				s.printStackTrace();
+			}
+			return dataAl;
+			
+			
+		}
+		public ObservableList<Ciclos> ConsultaCi() {
+			
+		
+			final ObservableList<Ciclos> dataCi = FXCollections.observableArrayList();
+			
+			
+			
+			
+			try {
+				Statement stmt = conexion.createStatement();
+				ResultSet rset = stmt.executeQuery("SELECT * FROM PRUEBA.CICLOS" );
+				while(rset.next()) {
+					dataCi.add(new Ciclos(rset.getString(2)));
+					
+					
+				}
+				rset.close();
+				stmt.close();
+				
+			}catch (SQLException s){
+				s.printStackTrace();
+			}
+			return dataCi;
+			
+			
+		}
+		public ObservableList<Tutores> ConsultaTutores() {
+			
+			
+			final ObservableList<Tutores> dataTut = FXCollections.observableArrayList();
+			
+			
+			
+			
+			try {
+				Statement stmt = conexion.createStatement();
+				ResultSet rset = stmt.executeQuery("SELECT * FROM PRUEBA.TUTORES" );
+				while(rset.next()) {
+					dataTut.add(new Tutores(rset.getString(3),rset.getString(2)));
+					
+					
+				}
+				rset.close();
+				stmt.close();
+				
+			}catch (SQLException s){
+				s.printStackTrace();
+			}
+			return dataTut;
+			
+			
+		}
+		public ObservableList<Tutor_Empresa> ConsultaTutEmp() {
+			
+			
+			final ObservableList<Tutor_Empresa> dataTutEmp = FXCollections.observableArrayList();
+			
+			
+			
+			try {
+				Statement stmt = conexion.createStatement();
+				ResultSet rset = stmt.executeQuery("SELECT * FROM PRUEBA.TUTOR_EMPRESA" );
+				while(rset.next()) {
+					dataTutEmp.add(new Tutor_Empresa(rset.getString(3),rset.getString(2)));
+					
+					
+				}
+				rset.close();
+				stmt.close();
+				
+			}catch (SQLException s){
+				s.printStackTrace();
+			}
+			return dataTutEmp;
+			
+			
+		}
+		
+		
+			
 	
 		
 	
