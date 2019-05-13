@@ -3,11 +3,21 @@ package vista;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+
+import application.Main;
 import application.TestConexion;
 
 public class VentanaPrincipal  {
@@ -15,7 +25,7 @@ public class VentanaPrincipal  {
 	TestConexion conexionbbdd;
 	
 	@FXML
-	private Button Añadir;
+	private Button Anadir;
 	
 	@FXML
 	private Button Editar;
@@ -75,6 +85,17 @@ public class VentanaPrincipal  {
 		private TableColumn<Tutor_Empresa,String> ColNombrTuemp;
 		@FXML
 		private TableColumn<Tutor_Empresa,String> ColNombrTuempNombre;
+		
+		public void botonanadir(ActionEvent event) throws IOException{
+
+			FXMLLoader loader = new FXMLLoader(Main.class.getResource("VentanaAnadir.fxml"));
+			AnchorPane ventanaDos = (AnchorPane) loader.load();
+	        Stage ventana = new Stage();
+	        ventana.setTitle("Venta Dos");
+	        Scene scene = new Scene(ventanaDos);
+	        ventana.setScene(scene);
+	        ventana.show();
+		}
 		
 		
 		

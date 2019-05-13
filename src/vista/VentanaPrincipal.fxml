@@ -74,7 +74,7 @@
             <Font size="25.0" fx:id="x112" />
          </font>
       </Text>
-      <Button layoutX="32.0" layoutY="158.0" mnemonicParsing="false" prefHeight="129.0" prefWidth="136.0" text="Nuevo" />
+      <Button fx:id="Anadir" layoutX="32.0" layoutY="158.0" mnemonicParsing="false" onAction="#botonanadir" prefHeight="129.0" prefWidth="136.0" text="Nuevo" />
       <Button layoutX="216.0" layoutY="158.0" mnemonicParsing="false" prefHeight="129.0" prefWidth="136.0" text="Editar" />
       <Button layoutX="574.0" layoutY="158.0" mnemonicParsing="false" prefHeight="129.0" prefWidth="136.0" text="Consultar" />
       <Button layoutX="758.0" layoutY="158.0" mnemonicParsing="false" prefHeight="129.0" prefWidth="136.0" text="Borrar empresa" />

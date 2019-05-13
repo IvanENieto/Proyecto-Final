@@ -86,7 +86,7 @@ public class TestConexion {
 				
 				try {
 					Statement stmt = conexion.createStatement();
-					ResultSet rset = stmt.executeQuery("SELECT * FROM PRUEBA.EMPRESAS" );
+					ResultSet rset = stmt.executeQuery("SELECT * FROM "+scheme+".EMPRESAS" );
 					while(rset.next()) {
 						dataEmp.add(new Empresa(rset.getString(2)));
 						
@@ -113,7 +113,7 @@ public class TestConexion {
 			
 			try {
 				Statement stmt = conexion.createStatement();
-				ResultSet rset = stmt.executeQuery("SELECT * FROM PRUEBA.ALUMNOS" );
+				ResultSet rset = stmt.executeQuery("SELECT * FROM "+scheme+".ALUMNOS" );
 				while(rset.next()) {
 					dataAl.add(new Alumnos(rset.getString(3),rset.getString(2)));
 					
@@ -139,7 +139,7 @@ public class TestConexion {
 			
 			try {
 				Statement stmt = conexion.createStatement();
-				ResultSet rset = stmt.executeQuery("SELECT * FROM PRUEBA.CICLOS" );
+				ResultSet rset = stmt.executeQuery("SELECT * FROM "+scheme+".CICLOS" );
 				while(rset.next()) {
 					dataCi.add(new Ciclos(rset.getString(2)));
 					
@@ -165,7 +165,7 @@ public class TestConexion {
 			
 			try {
 				Statement stmt = conexion.createStatement();
-				ResultSet rset = stmt.executeQuery("SELECT * FROM PRUEBA.TUTORES" );
+				ResultSet rset = stmt.executeQuery("SELECT * FROM "+scheme+".TUTORES" );
 				while(rset.next()) {
 					dataTut.add(new Tutores(rset.getString(3),rset.getString(2)));
 					
@@ -190,7 +190,7 @@ public class TestConexion {
 			
 			try {
 				Statement stmt = conexion.createStatement();
-				ResultSet rset = stmt.executeQuery("SELECT * FROM PRUEBA.TUTOR_EMPRESA" );
+				ResultSet rset = stmt.executeQuery("SELECT * FROM "+scheme+".TUTOR_EMPRESA" );
 				while(rset.next()) {
 					dataTutEmp.add(new Tutor_Empresa(rset.getString(3),rset.getString(2)));
 					
