@@ -3,6 +3,8 @@ package vista;
 import java.io.IOException;
 
 import application.Main;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,6 +22,9 @@ public class VentanaAnadir {
 	
 	@FXML
 	private ChoiceBox<String> Desple;
+	
+	ObservableList<String> DespleList = FXCollections.observableArrayList("Alumnos", "Tutores de centro", "Tutores de empresa","Empresa","Ciclo","Representante Empresa");
+	
 	
 	
 	
@@ -90,9 +95,12 @@ public class VentanaAnadir {
 	
 
 	public void initialize(){
+		
+		
 
-		 Desple = new ChoiceBox<String>();
-		 Desple.getItems().addAll("Alumnos", "Tutores de centro", "Tutores de empresa","Empresa","Ciclo","Representante Empresa");
+	
+		 Desple.setItems(DespleList);
+		
 		
 	}
 	

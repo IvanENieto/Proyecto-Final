@@ -88,10 +88,10 @@ public class VentanaPrincipal  {
 		
 		public void botonanadir(ActionEvent event) throws IOException{
 
-			FXMLLoader loader = new FXMLLoader(Main.class.getResource("VentanaAnadir.fxml"));
+			FXMLLoader loader = new FXMLLoader(Main.class.getResource("../vista/VentanaAnadir.fxml"));
 			AnchorPane ventanaDos = (AnchorPane) loader.load();
 	        Stage ventana = new Stage();
-	        ventana.setTitle("Venta Dos");
+	        ventana.setTitle("Ventana añadir");
 	        Scene scene = new Scene(ventanaDos);
 	        ventana.setScene(scene);
 	        ventana.show();
