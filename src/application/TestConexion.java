@@ -35,12 +35,9 @@ public class TestConexion {
 				try {
 					File miFichero = new File("src/application/hola.ini");
 					if(miFichero.exists()) {
-						System.out.println("Fichero encontrado");
 					entrada = new FileInputStream(miFichero);
 					propiedades.load(entrada);
-					System.out.println(propiedades.getProperty("Basededatos"));
 					usr=propiedades.getProperty("usr");
-					System.out.println(usr);
 					pwd=propiedades.getProperty("pwd");
 					scheme=propiedades.getProperty("scheme");
 					}else

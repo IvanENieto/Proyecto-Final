@@ -76,7 +76,7 @@
       </Text>
       <Button fx:id="Anadir" layoutX="32.0" layoutY="158.0" mnemonicParsing="false" onAction="#botonanadir" prefHeight="129.0" prefWidth="136.0" text="Nuevo" />
       <Button layoutX="216.0" layoutY="158.0" mnemonicParsing="false" prefHeight="129.0" prefWidth="136.0" text="Editar" />
-      <Button layoutX="574.0" layoutY="158.0" mnemonicParsing="false" prefHeight="129.0" prefWidth="136.0" text="Consultar" />
+      <Button fx:id="Consultar" layoutX="574.0" layoutY="158.0" mnemonicParsing="false" onAction="#botonconsultas" prefHeight="129.0" prefWidth="136.0" text="Consultar" />
       <Button layoutX="758.0" layoutY="158.0" mnemonicParsing="false" prefHeight="129.0" prefWidth="136.0" text="Borrar empresa" />
       <Button layoutX="398.0" layoutY="158.0" mnemonicParsing="false" prefHeight="129.0" prefWidth="136.0" text="Enviar alumno" />
       <Separator layoutX="1.0" layoutY="381.0" prefHeight="33.0" prefWidth="931.0" />
