@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TabPane;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -88,16 +89,26 @@ public class VentanaPrincipal  {
 		
 		public void botonanadir(ActionEvent event) throws IOException{
 
-			FXMLLoader loader = new FXMLLoader(Main.class.getResource("VentanaAnadir.fxml"));
+			FXMLLoader loader = new FXMLLoader(Main.class.getResource("../vista/VentanaAnadir.fxml"));
 			AnchorPane ventanaDos = (AnchorPane) loader.load();
 	        Stage ventana = new Stage();
-	        ventana.setTitle("Venta Dos");
+	        ventana.setTitle("Añadir");
 	        Scene scene = new Scene(ventanaDos);
 	        ventana.setScene(scene);
 	        ventana.show();
 		}
 		
-		
+		public void botonconsultas(ActionEvent event) throws IOException{
+			
+		FXMLLoader loader = new FXMLLoader(Main.class.getResource("../vista/Consultas.fxml"));
+	    TabPane ventanaTres = (TabPane) loader.load();
+	    Stage ventana = new Stage();
+	    ventana.setTitle("Consultas");
+	    Scene scene = new Scene(ventanaTres);
+	    ventana.setScene(scene);
+	    ventana.show();
+	    
+		}
 		
 		
 	
