@@ -43,7 +43,7 @@ public class ControladorConsultas {
 			TablaConsultas.setItems(data);
 			ColNombreConsultas.setCellValueFactory(new PropertyValueFactory<Alumnos,String>("APELLIDOS"));
 			ColNombreConsultasApellido.setCellValueFactory(new PropertyValueFactory<Alumnos,String>("NOMBRE"));
-			
+			/*Comentario*/
 			
 		}
 		
